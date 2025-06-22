@@ -13,9 +13,8 @@
 
 .top-row {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
   width: 90%;
+  /* opd sirina, vrv ce morat da se popravlja */
 }
 
 .logo {
@@ -23,54 +22,77 @@
 }
 
 .search-form {
-  width: 100000;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  max-width: 400px;
+  margin: 0 2rem;
+  flex: 1;
+  position: relative;
 }
 
 .search-form input {
-  flex: 1;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  height: 90%;
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: #2f2f2f;
+  padding: 0 1rem;
+  border: none;
 }
 
 .search-form button {
-  background-color: #2f855a;
+  background: transparent;
   color: white;
   border: none;
   padding: 0.5rem 0.7rem;
   border-radius: 4px;
   cursor: pointer;
+  position: absolute;
+  right: 0rem;
 }
 
 .contact {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
+}
+
+.contact:hover {
+  color: #ef5a35;
 }
 
 .contact-info {
   font-size: 0.85rem;
-  line-height: 1.2;
+}
+
+.phone-number {
+  color: #ef5a35;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 
+
 .bottom-row {
-  background-color: #2f855a;
+  background-color: #217945;
   width: 90%;
-  max-height: 45px;
+  min-height: 45px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   color: white;
   font-weight: 600;
-  user-select: none;
-  gap: 0.5rem;
-  flex-wrap: nowrap;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.fix {
+  display: flex;
+  gap: 8rem;
+  align-items: center;
+  height: 100%;
 }
 
 .kategorije {
@@ -79,7 +101,6 @@
   font-size: 1.1rem;
   cursor: pointer;
   gap: 0.3rem;
-  white-space: nowrap;
 }
 
 .kategorije span {
@@ -89,31 +110,50 @@
 }
 
 .nav-links {
+  height: 100%;
   list-style: none;
   display: flex;
   padding: 0;
-  justify-content: center;
-  margin-left: 0.5rem;
+  margin: 0;
   gap: 1rem;
-  flex-grow: 0;
-  justify-content: flex-start;
-  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav-links a {
+.nav-link {
+  height: 100%;
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: text-decoration 0.2s ease;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  position: relative;
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
+.nav-link:hover {
+  color: #a7f3d0;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: -10px;
+  height: 6px;
+  width: calc(100% + 20px);
+  background-color: #4b5563;
+  display: block;
 }
 
 .icons {
   display: flex;
   gap: 1rem;
+  align-items: center;
+  height: 100%;
 }
 
 .icons button {
@@ -122,10 +162,31 @@
   color: white;
   cursor: pointer;
   font-size: 1.3rem;
-  padding: 0.25rem;
+  padding: 0;
+  margin: 0;
   transition: color 0.2s ease;
 }
 
 .icons button:hover {
   color: #a7f3d0;
+}
+
+.icon-with-badge {
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 999px;
+  line-height: 1;
+  min-width: 18px;
+  text-align: center;
 }

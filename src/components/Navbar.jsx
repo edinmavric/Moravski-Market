@@ -1,13 +1,33 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Heart, Menu, PhoneCall, Search, ShoppingBag, Sun, User } from 'lucide-react';
 import { useState } from 'react';
 import './navbar.css';
 const Navbar = () => {
+
+  const [wishlistCount, setWishlistCount] = useState(1);
+  const [cartCount, setCartCount] = useState(4);
   const [searchQuery, setSearchQuery] = useState("");
   const handleSearch = () => {
     e.preventDefault();
     console.log("Search submitted");//search logic is prestene
   };
+
+  const addToWishlist = () => {
+    setWishlistCount(prev => prev + 1);//useless rn but might be usefull later
+  };
+
+  const addToCart = () => {
+    setCartCount(prev => prev + 1);
+  };
+  const navLinks = [
+    { path: "/", label: "Naslovna" },
+    { path: "/o-nama", label: "O nama" },
+    { path: "/prodavnica", label: "Prodavnica" },
+    { path: "/proizvodjaci", label: "Proizvođači" },
+    { path: "/distributivni-centar", label: "Distributivni centar" },
+    { path: "/novosti", label: "Novosti" },
+    { path: "/kontakt", label: "Kontakt" },
+  ];
 
   return (
     <header className="navbar">
@@ -37,20 +57,39 @@ const Navbar = () => {
       </div>
 
       <nav className="bottom-row">
-        <div class="kategorije"><span><Menu /></span>KATEGORIJE</div>
-        <ul className="nav-links">
-          <li><Link to="/">Naslovna</Link></li>
-          <li><Link to="/o-nama">O nama</Link></li>
-          <li><Link to="/prodavnica">Prodavnica</Link></li>
-          <li><Link to="/proizvodjaci">Proizvođači</Link></li>
-          <li><Link to="/distributivni-centar">Distributivni centar</Link></li>
-          <li><Link to="/novosti">Novosti</Link></li>
-          <li><Link to="/kontakt">Kontakt</Link></li>
-        </ul>
-        <div className='icons'>
+        <div className="fix">
+          <div class="kategorije">
+            <span><Menu /></span>KATEGORIJE
+          </div>
+
+
+          <ul className="nav-links">
+            {navLinks.map(({ path, label }) => (
+              <li key={path}>
+                <NavLink
+                  to={path}
+                  className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                  {label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+
+        <div className="icons">
           <button><Sun /></button>
-          <button><Heart /></button>
-          <button><ShoppingBag /></button>
+
+          <div className="icon-with-badge">
+            <button><Heart /></button>
+            {wishlistCount > 0 && <span className="badge">{wishlistCount}</span>}
+          </div>
+
+          <div className="icon-with-badge">
+            <button><ShoppingBag /></button>
+            {cartCount > 0 && <span className="badge">{cartCount}</span>}
+          </div>
+
           <button><User /></button>
         </div>
       </nav>
