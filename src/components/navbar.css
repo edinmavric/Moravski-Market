@@ -150,8 +150,12 @@
   left: -10px;
   height: 6px;
   width: calc(100% + 20px);
-  background-color: #4b5563;
+  background-color: #d1d5db;
   display: block;
+}
+
+.dark .nav-link.active::after {
+  background-color: #4b5563;
 }
 
 .icons {
