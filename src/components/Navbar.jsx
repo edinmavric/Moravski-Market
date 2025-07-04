@@ -58,7 +58,7 @@ const Navbar = () => {
 
       <nav className="bottom-row">
         <div className="fix">
-          <div class="kategorije">
+          <div className="kategorije">
             <span><Menu /></span>KATEGORIJE
           </div>
 
