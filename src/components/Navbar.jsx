@@ -1,12 +1,15 @@
 import { Link, NavLink } from 'react-router-dom';
-import { Heart, Menu, PhoneCall, Search, ShoppingBag, Sun, User } from 'lucide-react';
+import { Heart, Menu, Moon, PhoneCall, Search, ShoppingBag, Sun, User } from 'lucide-react';
 import { useState } from 'react';
 import './navbar.css';
+import { useTheme } from '../context/ThemeContext';
 const Navbar = () => {
 
+  const { theme, toggleTheme } = useTheme();
   const [wishlistCount, setWishlistCount] = useState(1);
   const [cartCount, setCartCount] = useState(4);
   const [searchQuery, setSearchQuery] = useState("");
+
   const handleSearch = () => {
     e.preventDefault();
     console.log("Search submitted");//search logic is prestene
@@ -33,7 +36,7 @@ const Navbar = () => {
     <header className="navbar">
       <div className="top-row">
         <img
-          src="https://www.moravskimarket.rs/logo-white.png" //niko nece primetit bgt
+          src={theme === "light" ? "https://www.moravskimarket.rs/logo.png" : "https://www.moravskimarket.rs/logo-white.png"} //niko nece primetit bgt
           alt="Moravski Market Logo"
         />
 
@@ -78,8 +81,9 @@ const Navbar = () => {
 
 
         <div className="icons">
-          <button><Sun /></button>
-
+          <button onClick={toggleTheme}>
+            {theme === "light" ? <Moon /> : <Sun />}
+          </button>
           <div className="icon-with-badge">
             <button><Heart /></button>
             {wishlistCount > 0 && <span className="badge">{wishlistCount}</span>}
