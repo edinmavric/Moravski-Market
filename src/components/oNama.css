@@ -1,0 +1,31 @@
+*{
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    margin: 0px auto;
+    height: 80vh;
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+}
+.naslovna{
+    font-size: xx-large;
+    align-self: center;
+    color: #ef5a35;
+    margin: 5px 0px 0px 0px;
+}
+.ispod-naslovne{
+    font-size: large;
+    align-self: center;
+    margin: 0px;
+}
+.iznadParagrafa{
+    margin-top: 20px;
+}
+.iznadParagrafa p{
+    margin: 0px;
+    font-size: x-large;
+}
+
