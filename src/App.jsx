@@ -5,6 +5,7 @@ import Footer from './components/footer';
 import ONama from './components/oNama';
 import Kontakt from './components/Kontakt';
 import Nalog from './components/Nalog';
+import Naslovna from './components/naslovna';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/kontakt' element={<Kontakt />}/>
         <Route path='/nalog' element={<Nalog />}/>
       </Routes>
+     <Naslovna />
      <Footer />    
     </BrowserRouter>
   );
