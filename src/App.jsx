@@ -7,6 +7,7 @@ import Kontakt from './components/Kontakt';
 import Nalog from './components/Nalog';
 import Prodavnica from './pages/Prodavnica';
 import Naslovna from './components/naslovna';
+import Wishlist from './components/wishlist';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/o-nama" element={<ONama />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/nalog" element={<Nalog />} />
+        <Route path='/lista-zelja' element={<Wishlist />} />
       </Routes>
       <Footer />
     </BrowserRouter>
