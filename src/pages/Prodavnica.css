@@ -1,0 +1,19 @@
+.containerProdavnica {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.kartice {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}

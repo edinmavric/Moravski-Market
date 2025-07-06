@@ -1,0 +1,27 @@
+ .card {
+   background-color: #f8f8f8;
+   display: flex;
+   flex-direction: column;
+   width: 20rem;
+   position: relative;
+ }
+
+ .card img {
+   width: 100%;
+   aspect-ratio: 1;
+ }
+
+ .heart {
+   width: 30px;
+   height: 30px;
+   margin-top: -3rem;
+   background-color: red;
+   border-radius: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .card-info {
+   padding: 0.5rem;
+ }

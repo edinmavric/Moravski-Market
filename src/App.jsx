@@ -5,18 +5,20 @@ import Footer from './components/footer';
 import ONama from './components/oNama';
 import Kontakt from './components/Kontakt';
 import Nalog from './components/Nalog';
+import Prodavnica from './pages/Prodavnica';
 
 function App() {
 
   return (
     <BrowserRouter>
-     <Navbar />
+      <Navbar />
       <Routes>
-        <Route path='/o-nama' element={<ONama />}/>
-        <Route path='/kontakt' element={<Kontakt />}/>
-        <Route path='/nalog' element={<Nalog />}/>
+        <Route path='/o-nama' element={<ONama />} />
+        <Route path="/prodavnica/:category?" element={<Prodavnica />} />
+        <Route path='/kontakt' element={<Kontakt />} />
+        <Route path='/nalog' element={<Nalog />} />
       </Routes>
-     <Footer />    
+      <Footer />
     </BrowserRouter>
   );
 }
