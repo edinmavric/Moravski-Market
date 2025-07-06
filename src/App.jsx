@@ -8,17 +8,16 @@ import Nalog from './components/Nalog';
 import Naslovna from './components/naslovna';
 
 function App() {
-
   return (
     <BrowserRouter>
-     <Navbar />
+      <Navbar />
       <Routes>
-        <Route path='/o-nama' element={<ONama />}/>
-        <Route path='/kontakt' element={<Kontakt />}/>
-        <Route path='/nalog' element={<Nalog />}/>
+        <Route path="/" element={<Naslovna />} />
+        <Route path="/o-nama" element={<ONama />} />
+        <Route path="/kontakt" element={<Kontakt />} />
+        <Route path="/nalog" element={<Nalog />} />
       </Routes>
-     <Naslovna />
-     <Footer />    
+      <Footer />
     </BrowserRouter>
   );
 }
