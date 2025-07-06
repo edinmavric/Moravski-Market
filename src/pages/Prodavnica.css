@@ -17,3 +17,24 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
+
+.categories h2 {
+  color: #ef5a35;
+  margin-bottom: -0.5rem;
+}
+
+.categories ul {
+  padding-left: 1.5rem;
+}
+
+.categories li {
+  list-style: none;
+}
+
+.categories li a {
+  color: #2d2d2d;
+}
+
+.categories li a:hover {
+  color: #ef5a35;
+}

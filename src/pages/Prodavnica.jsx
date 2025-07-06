@@ -22,12 +22,12 @@ const Prodavnica = () => {
     <div className="containerProdavnica">
       <div className="shop">
         <div className="categories">
-          <h2>Kategorije</h2>
+          <h2>KATEGORIJE</h2>
           <ul className="list">
             {categories.map(([cat, count]) => (
               <li key={cat} className="list-item">
                 <Link to={`/prodavnica/${encodeURIComponent(cat)}`}>
-                  {cat} ({count})
+                  {cat}<span className="cat-number">&nbsp;&nbsp;({count})</span>
                 </Link>
               </li>
             ))}

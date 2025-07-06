@@ -12,25 +12,25 @@ const ItemCard = ({ product }) => {
         <img src={product.image} alt={product.name} />
       </Link>
       <div className="card-info">
-        <div className="heart"><Heart /></div>
+        <div className="heart"><Heart size={23} /></div>
 
         <p>
           {product.categories.map((cat, idx) => (
-            <Link key={idx} to={`/shop/${encodeURIComponent(cat)}`}>
+            <Link key={idx} to={`/shop/${encodeURIComponent(cat)}`} className="product-info">
               <span>{cat}</span>{' '}
             </Link>
-          ))} - <Link to={`/brend/${manufacturerSlug}`}>
+          ))} - <Link to={`/brend/${manufacturerSlug}`} className="product-info">
             <span>{product.manufacturer}</span>
           </Link>
         </p>
 
         <h3>
-          <Link to={`/proizvod/${product.id}/${productSlug}`}>
+          <Link to={`/proizvod/${product.id}/${productSlug}`} className="product-name">
             {product.name}
           </Link>
         </h3>
 
-        <h3>{product.price} RSD</h3>
+        <h3 className="product-price">{product.price} RSD</h3>
       </div>
 
     </div>
