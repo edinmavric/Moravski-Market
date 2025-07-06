@@ -6,17 +6,21 @@ import ONama from './components/oNama';
 import Kontakt from './components/Kontakt';
 import Nalog from './components/Nalog';
 import Prodavnica from './pages/Prodavnica';
+import Naslovna from './components/naslovna';
 
 function App() {
-
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
+        <Route path="/" element={<Naslovna />} />
         <Route path='/o-nama' element={<ONama />} />
         <Route path="/prodavnica/:category?" element={<Prodavnica />} />
         <Route path='/kontakt' element={<Kontakt />} />
         <Route path='/nalog' element={<Nalog />} />
+        <Route path="/o-nama" element={<ONama />} />
+        <Route path="/kontakt" element={<Kontakt />} />
+        <Route path="/nalog" element={<Nalog />} />
       </Routes>
       <Footer />
     </BrowserRouter>
