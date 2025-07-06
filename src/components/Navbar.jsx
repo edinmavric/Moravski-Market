@@ -85,7 +85,7 @@ const Navbar = () => {
             {theme === "light" ? <Moon /> : <Sun />}
           </button>
           <div className="icon-with-badge">
-            <button><Heart /></button>
+            <Link to="/lista-zelja"><button><Heart /></button></Link>
             {wishlistCount > 0 && <span className="badge">{wishlistCount}</span>}
           </div>
 
@@ -94,7 +94,7 @@ const Navbar = () => {
             {cartCount > 0 && <span className="badge">{cartCount}</span>}
           </div>
 
-          <button><User /></button>
+          <Link to="/nalog"><button><User /></button></Link>
         </div>
       </nav>
     </header>
