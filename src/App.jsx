@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/footer';
@@ -8,11 +9,23 @@ import Nalog from './components/Nalog';
 import Prodavnica from './pages/Prodavnica';
 import Naslovna from './components/naslovna';
 import Wishlist from './components/wishlist';
+import SideBar from './components/SideBar';
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setSidebarOpen(true);
+  };
+
+  const handleSidebarClose = () => {
+    setSidebarOpen(false);
+  };
+
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar onMenuClick={handleMenuClick} />
+      <SideBar open={sidebarOpen} onClose={handleSidebarClose} />
       <Routes>
         <Route path="/" element={<Naslovna />} />
         <Route path='/o-nama' element={<ONama />} />

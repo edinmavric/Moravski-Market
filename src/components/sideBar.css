@@ -53,10 +53,20 @@
 }
 
 .sidebar-list-item {
-  padding: 12px;
+  padding: 0;
   cursor: pointer;
   border-bottom: 1px solid #f0f0f0;
 }
-.sidebar-list-item:hover {
+
+.sidebar-list-item a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-list-item:hover,
+.sidebar-list-item a:hover {
   background-color: #f9f9f9;
 }
