@@ -2,12 +2,12 @@ import { Link, NavLink } from 'react-router-dom';
 import { Heart, Menu, PhoneCall, Search, ShoppingBag, Sun, User } from 'lucide-react';
 import { useState } from 'react';
 import './navbar.css';
-const Navbar = () => {
+const Navbar = ({onMenuClick}) => {
 
   const [wishlistCount, setWishlistCount] = useState(1);
   const [cartCount, setCartCount] = useState(4);
   const [searchQuery, setSearchQuery] = useState("");
-  const handleSearch = () => {
+  const handleSearch = (e) => {
     e.preventDefault();
     console.log("Search submitted");//search logic is prestene
   };
@@ -58,9 +58,9 @@ const Navbar = () => {
 
       <nav className="bottom-row">
         <div className="fix">
-          <div class="kategorije">
-            <span><Menu /></span>KATEGORIJE
-          </div>
+          <div className="kategorije" onClick={onMenuClick} style={{ cursor: 'pointer' }}>
+  <span><Menu /></span>KATEGORIJE
+</div>
 
 
           <ul className="nav-links">

@@ -190,3 +190,8 @@
   min-width: 18px;
   text-align: center;
 }
+.kategorije.active {
+  background-color: white;
+  color: grey;
+  
+}
