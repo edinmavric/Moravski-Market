@@ -1,0 +1,94 @@
+.footer {
+  font-family: Arial, sans-serif;
+  color: white;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slika img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sredisnji-deo-footera {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px 20px;
+  background-color: #25794f;
+}
+
+.text {
+  flex: 1;
+  min-width: 180px;
+  margin: 20px;
+}
+
+.text h2 {
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 2px solid white;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.text p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.ikonice {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.ikonice a {
+  font-size: 20px;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.ikonice a:hover {
+  transform: scale(1.1);
+  color: #f4b860;
+}
+
+
+.text img {
+  width: 120px;
+  height: auto;
+  margin-top: 20px;
+}
+
+
+.donji-deo-footera1 {
+  background-color: #25794f;
+  padding: 20px 40px;
+  font-size: 13px;
+  text-align: center;
+  color: white;
+  line-height: 1.6;
+}
+
+
+.donji-deo-footera2 {
+  background-color: #f4b860;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.donji-deo-footera2 span {
+  font-weight: bold;
+  color: #e25858;
+}
+
+
+.donji-deo-footera3 {
+  height: 10px;
+  background-color: transparent;
+}

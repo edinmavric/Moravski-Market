@@ -1,13 +1,18 @@
 import { Link, NavLink } from 'react-router-dom';
-import { Heart, Menu, PhoneCall, Search, ShoppingBag, Sun, User } from 'lucide-react';
+import { Heart, Menu, Moon, PhoneCall, Search, ShoppingBag, Sun, User } from 'lucide-react';
 import { useState } from 'react';
 import './navbar.css';
 const Navbar = ({onMenuClick}) => {
-
+import { useTheme } from '../context/ThemeContext';
+const Navbar = () => {
+  const { theme, toggleTheme } = useTheme();
   const [wishlistCount, setWishlistCount] = useState(1);
   const [cartCount, setCartCount] = useState(4);
   const [searchQuery, setSearchQuery] = useState("");
   const handleSearch = (e) => {
+
+
+  const handleSearch = () => {
     e.preventDefault();
     console.log("Search submitted");//search logic is prestene
   };
@@ -33,7 +38,7 @@ const Navbar = ({onMenuClick}) => {
     <header className="navbar">
       <div className="top-row">
         <img
-          src="https://www.moravskimarket.rs/logo-white.png" //niko nece primetit bgt
+          src={theme === "light" ? "https://www.moravskimarket.rs/logo.png" : "https://www.moravskimarket.rs/logo-white.png"} //niko nece primetit bgt
           alt="Moravski Market Logo"
         />
 
@@ -61,8 +66,6 @@ const Navbar = ({onMenuClick}) => {
           <div className="kategorije" onClick={onMenuClick} style={{ cursor: 'pointer' }}>
   <span><Menu /></span>KATEGORIJE
 </div>
-
-
           <ul className="nav-links">
             {navLinks.map(({ path, label }) => (
               <li key={path}>
@@ -78,10 +81,11 @@ const Navbar = ({onMenuClick}) => {
 
 
         <div className="icons">
-          <button><Sun /></button>
-
+          <button onClick={toggleTheme}>
+            {theme === "light" ? <Moon /> : <Sun />}
+          </button>
           <div className="icon-with-badge">
-            <button><Heart /></button>
+            <Link to="/lista-zelja"><button><Heart /></button></Link>
             {wishlistCount > 0 && <span className="badge">{wishlistCount}</span>}
           </div>
 
@@ -90,7 +94,7 @@ const Navbar = ({onMenuClick}) => {
             {cartCount > 0 && <span className="badge">{cartCount}</span>}
           </div>
 
-          <button><User /></button>
+          <Link to="/nalog"><button><User /></button></Link>
         </div>
       </nav>
     </header>

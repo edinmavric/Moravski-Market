@@ -30,17 +30,22 @@
 }
 
 .search-form input {
+  color: #9ca3af;
   height: 90%;
   width: 100%;
+  background-color: #f8f8f8;
   font-size: 1.2rem;
-  background-color: #484a53;
   padding: 0 1rem;
   border: none;
 }
 
+.dark .search-form input {
+  background-color: #484a53;
+}
+
 .search-form button {
   background: transparent;
-  color: white;
+  color: #7b828e;
   border: none;
   padding: 0.5rem 0.7rem;
   border-radius: 4px;
@@ -145,8 +150,12 @@
   left: -10px;
   height: 6px;
   width: calc(100% + 20px);
-  background-color: #4b5563;
+  background-color: #d1d5db;
   display: block;
+}
+
+.dark .nav-link.active::after {
+  background-color: #4b5563;
 }
 
 .icons {
@@ -180,7 +189,7 @@
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: red;
+  background-color: #ef5a35;
   color: white;
   font-size: 0.65rem;
   font-weight: bold;
