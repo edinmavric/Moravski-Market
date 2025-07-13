@@ -2,13 +2,15 @@ import { Link, NavLink } from 'react-router-dom';
 import { Heart, Menu, Moon, PhoneCall, Search, ShoppingBag, Sun, User } from 'lucide-react';
 import { useState } from 'react';
 import './navbar.css';
+const Navbar = ({onMenuClick}) => {
 import { useTheme } from '../context/ThemeContext';
 const Navbar = () => {
-
   const { theme, toggleTheme } = useTheme();
   const [wishlistCount, setWishlistCount] = useState(1);
   const [cartCount, setCartCount] = useState(4);
   const [searchQuery, setSearchQuery] = useState("");
+  const handleSearch = (e) => {
+
 
   const handleSearch = () => {
     e.preventDefault();
@@ -61,11 +63,9 @@ const Navbar = () => {
 
       <nav className="bottom-row">
         <div className="fix">
-          <div className="kategorije">
-            <span><Menu /></span>KATEGORIJE
-          </div>
-
-
+          <div className="kategorije" onClick={onMenuClick} style={{ cursor: 'pointer' }}>
+  <span><Menu /></span>KATEGORIJE
+</div>
           <ul className="nav-links">
             {navLinks.map(({ path, label }) => (
               <li key={path}>
