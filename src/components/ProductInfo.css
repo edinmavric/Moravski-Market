@@ -29,6 +29,10 @@
   font-weight: 700;
 }
 
+.product-page-info a:hover {
+  color: #ef5a35;
+}
+
 .product-pictures img {
   height: 45vh;
   aspect-ratio: 1;
