@@ -38,3 +38,7 @@
 .categories li a:hover {
   color: #ef5a35;
 }
+
+.categories li .dark {
+  color: white;
+}

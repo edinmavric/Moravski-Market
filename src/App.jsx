@@ -10,6 +10,7 @@ import Prodavnica from './pages/Prodavnica';
 import Naslovna from './components/naslovna';
 import Wishlist from './components/wishlist';
 import SideBar from './components/SideBar';
+import ProductPage from './pages/ProductPage';
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -30,6 +31,7 @@ function App() {
         <Route path="/" element={<Naslovna />} />
         <Route path='/o-nama' element={<ONama />} />
         <Route path="/prodavnica/:category?" element={<Prodavnica />} />
+        <Route path="/proizvod/:id/:slug" element={<ProductPage />} />
         <Route path='/kontakt' element={<Kontakt />} />
         <Route path='/nalog' element={<Nalog />} />
         <Route path="/o-nama" element={<ONama />} />
