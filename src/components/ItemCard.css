@@ -4,6 +4,7 @@
    flex-direction: column;
    width: 20rem;
    position: relative;
+   min-height: 29rem;
  }
 
  .card img {
@@ -22,15 +23,29 @@
    align-items: center;
  }
 
+ .heart.dark {
+   background-color: #313339;
+ }
+
  .card-info {
    padding: 0.5rem;
+   flex: 1;
+   background-color: #f8f8f8;
+ }
+
+ .card-info.dark {
+   background-color: #313339 !important;
  }
 
  .product-info {
    color: #2d2d2d;
    font-size: 13px;
    text-decoration: underline;
-   font-weight: 550;
+ }
+
+ .product-info.dark {
+   color: #e5e7eb;
+   background-color: #313339;
  }
 
  .card-info a:hover {
@@ -38,9 +53,14 @@
  }
 
  .product-name {
-   font-size: 16px;
+   font-size: 18px;
    font-weight: bold;
    color: #2d2d2d;
+ }
+
+ .product-name.dark {
+   color: #e5e7eb;
+   background-color: #313339;
  }
 
  .product-price {
@@ -51,4 +71,8 @@
 
  .cat-number {
    color: #9ca3af;
+ }
+
+ .dark {
+   color: white;
  }
